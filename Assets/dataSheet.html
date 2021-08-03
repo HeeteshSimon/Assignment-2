@@ -12,11 +12,13 @@
 
     <link rel="stylesheet" href="/Assets/css/style.css" class="main/css">
     
-
+    <!-- <script type="text/javascript">
+         onStreamSelection ()
+    </script> -->
     <title>DataSheet</title>
 </head>
 
-<body>
+<body onload="onStreamSelection ();">
     <form action="../marksheet/graph.html">
     <div class="container login-form" style="background-color: rgb(245,245,245);">
         <div class="container p-3">
@@ -84,7 +86,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary">prev</button>
-            <button type="submit" class="btn btn-primary" id="submitBtn" >Submit</button>
+            <button type="submit" class="btn btn-primary" id="submitBtn" onclick="onLoadStream ();" >Submit</button>
         </div>
     </div>
 </form>

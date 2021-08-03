@@ -1,31 +1,4 @@
-//function formData(dataF) {
 
-  // importing user information
-
-  //import {data} from './storage.js';
-
-  let username = window.sessionStorage.getItem('nameId');
-  let streams = window.sessionStorage.getItem('streamId');
-
-  // window.sessionStorage.setItem('nameId', username);
-  // window.sessionStorage.setItem('streamId', streams);
-
-  // setting value for name and stream in datasheet page
-
-  document.getElementById('usernameId').value = window.sessionStorage.getItem('nameId');
-  document.getElementById('streamId').value = window.sessionStorage.getItem('streamId');
-
-  //console.log(document.getElementById('usernameId').value);
-
-  // we will store subjects locally here
-
-  let streamSubjects = {
-    Computer: ['Java', 'DSA', 'Python', 'COA', 'Database'],
-    IT: ['OS', 'CN', 'SE', 'Web Design', 'Cloud'],
-    Electronics: ['Antenna System Design', 'Wireless Networks', 'Signal Processing', 'Digital Communication Techniques', 'VLSI Signal Processing'],
-    Electrical: ['Electro-magnetism', 'Control systems', 'Circuit Analysis', 'Instrumentation', 'Transmission & Distribution'],
-    Mechanics: ['Statics and dynamics', 'Engineering Physics', 'Mechanics', 'Thermodynamics', 'Workshop'],
-  };
 
   // let's place the selected streams subject inthe table
 
@@ -55,27 +28,71 @@
     window.sessionStorage.setItem('marks5', document.getElementById('marks5').value);
   }
 
+  function onStreamSelection () {
+    let username = window.sessionStorage.getItem('nameId');
+    let streams = window.sessionStorage.getItem('streamId');
+  
+    // window.sessionStorage.setItem('nameId', username);
+    // window.sessionStorage.setItem('streamId', streams);
+  
+    // setting value for name and stream in datasheet page
+  
+    document.getElementById('usernameId').value = window.sessionStorage.getItem('nameId');
+    document.getElementById('streamId').value = window.sessionStorage.getItem('streamId');
+    switch (streams) {
+      case 'Computer':
+        streamSubjectsFunc(streamSubjects.Computer);
+        break;
+      case 'IT':
+        streamSubjectsFunc(streamSubjects.IT);
+        break;
+      case 'Electronics':
+        streamSubjectsFunc(streamSubjects.Electronics);
+        break;
+      case 'Electrical':
+        streamSubjectsFunc(streamSubjects.Electrical);
+        break;
+      case 'Mechanics':
+        streamSubjectsFunc(streamSubjects.Mechanics);
+    };
+  }
+
+  function onLoadStream () {
+    let streams = window.sessionStorage.getItem('streamId');
+  
+
+  //console.log(document.getElementById('usernameId').value);
+
+  // we will store subjects locally here
+
+  let streamSubjects = {
+    Computer: ['Java', 'DSA', 'Python', 'COA', 'Database'],
+    IT: ['OS', 'CN', 'SE', 'Web Design', 'Cloud'],
+    Electronics: ['Antenna System Design', 'Wireless Networks', 'Signal Processing', 'Digital Communication Techniques', 'VLSI Signal Processing'],
+    Electrical: ['Electro-magnetism', 'Control systems', 'Circuit Analysis', 'Instrumentation', 'Transmission & Distribution'],
+    Mechanics: ['Statics and dynamics', 'Engineering Physics', 'Mechanics', 'Thermodynamics', 'Workshop'],
+  };
 
   switch (streams) {
     case 'Computer':
-      streamSubjectsFunc(streamSubjects.Computer);
+      
       streamSubjectsMarks(streamSubjects.Computer);
       break;
     case 'IT':
-      streamSubjectsFunc(streamSubjects.IT);
+      
       streamSubjectsMarks(streamSubjects.IT);
       break;
     case 'Electronics':
-      streamSubjectsFunc(streamSubjects.Electronics);
+      
       streamSubjectsMarks(streamSubjects.Electronics);
       break;
     case 'Electrical':
-      streamSubjectsFunc(streamSubjects.Electrical);
+    
       streamSubjectsMarks(streamSubjects.Electrical);
       break;
     case 'Mechanics':
-      streamSubjectsFunc(streamSubjects.Mechanics);
+  
       streamSubjectsMarks(streamSubjects.Mechanics);
   };
-
+  }
 //}

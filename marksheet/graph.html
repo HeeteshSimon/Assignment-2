@@ -11,25 +11,25 @@
 
       // ##### TO BE COMMENTED OUT ######
       // User Credentials to send Email to
-      sessionStorage.setItem("Email", "joshuaraymondfernandes@gmail.com");
-      sessionStorage.setItem("Name", "Joshua");
+    //   sessionStorage.setItem("Email", "joshuaraymondfernandes@gmail.com");
+    //   sessionStorage.setItem("Name", "Joshua");
 
 
       google.charts.load('upcoming', {'packages': ['vegachart']}).then(drawChart);
 
-      sessionStorage.setItem("Subject1", "Maths");
-      sessionStorage.setItem("Subject2", "Science");
-      sessionStorage.setItem("Subject3", "EVS");
-      sessionStorage.setItem("Subject4", "Physics");
-      sessionStorage.setItem("Subject5", "Chemistry");
+    //   sessionStorage.setItem("Subject1", "Maths");
+    //   sessionStorage.setItem("Subject2", "Science");
+    //   sessionStorage.setItem("Subject3", "EVS");
+    //   sessionStorage.setItem("Subject4", "Physics");
+    //   sessionStorage.setItem("Subject5", "Chemistry");
 
-      sessionStorage.setItem("Marks1", 98);
-      sessionStorage.setItem("Marks2", 85);
-      sessionStorage.setItem("Marks3", 78);
-      sessionStorage.setItem("Marks4", 81);
-      sessionStorage.setItem("Marks5", 69);
+    //   sessionStorage.setItem("Marks1", 98);
+    //   sessionStorage.setItem("Marks2", 85);
+    //   sessionStorage.setItem("Marks3", 78);
+    //   sessionStorage.setItem("Marks4", 81);
+    //   sessionStorage.setItem("Marks5", 69);
 
-      alert(sessionStorage.getItem("marks2"));
+    //   alert(sessionStorage.getItem("marks2"));
 
 
       function drawChart() {
@@ -38,7 +38,7 @@
         dataTable.addColumn({type: 'number', 'id': 'amount'});
 
         // console.log(sessionStorage.getItem("Marks1"))
-         console.log(sessionStorage.getItem("marks2"))
+        // console.log(sessionStorage.getItem("marks2"))
 
         dataTable.addRows([
           [sessionStorage.getItem("subject1"), parseInt(sessionStorage.getItem("marks1"))],
@@ -142,7 +142,7 @@
                 // Name who is sending mail
                 from_name: "Student Marks Portal", 
                 // Name of the recipient 
-                to_name: sessionStorage.getItem("Name"),
+                to_name: sessionStorage.getItem("nameId"),
                 // Data to be sent to the recipient, the marks of the user 
                 subject1: `${sessionStorage.getItem("subject1")} : ${sessionStorage.getItem("marks1")}`,
                 subject2: `${sessionStorage.getItem("subject2")} : ${sessionStorage.getItem("marks2")}`,
@@ -150,7 +150,7 @@
                 subject4: `${sessionStorage.getItem("subject4")} : ${sessionStorage.getItem("marks4")}`,
                 subject5: `${sessionStorage.getItem("subject5")} : ${sessionStorage.getItem("marks5")}`,
                 // email to send to
-                to_email: sessionStorage.getItem("Email")
+                to_email: sessionStorage.getItem("email")
             })
         .then(function (message) {
           // Logs statements to see whether the code is running
@@ -165,7 +165,7 @@
 
       }
 
-      //sendEmail ();
+      sendEmail ();
 
         const chart = new google.visualization.VegaChart(document.getElementById('chart-div'));
         chart.draw(dataTable, options);

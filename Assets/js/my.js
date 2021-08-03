@@ -22,6 +22,7 @@ function saveFile() {
   // Get the data from each element on the form.
   let name = document.getElementById('nameId');
   let stream = document.getElementById('streamId');
+  let email = document.getElementById('email');
 
 
   // data['username'] = name.value;
@@ -29,7 +30,7 @@ function saveFile() {
   //export {data};
   window.sessionStorage.setItem('nameId', name.value);
   window.sessionStorage.setItem('streamId', stream.value);
-
+  window.sessionStorage.setItem('email', email.value);
   // setting value for name and stream in datasheet page
 
   
