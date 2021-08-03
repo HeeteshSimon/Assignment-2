@@ -65,11 +65,7 @@ ${sessionStorage.getItem("Subject5")} : ${sessionStorage.getItem("Marks5")}`
             // Data to be sent to the recipient, the marks of the user 
             message: data,
             // email to send to
-<<<<<<< HEAD
-            to_email: "heeteshsimon@gmail.com",
-=======
             to_email: sessionStorage.getItem("Email"),
->>>>>>> 25ccf48b154dfd5ebc2aa4577935f3ac8ded713f
         })
 		.then(function (message) {
 			// Logs statements to see whether the code is running
