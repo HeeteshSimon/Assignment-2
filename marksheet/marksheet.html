@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html data-ng-app="studentApp">
+<head>
+	<title>
+		Student Marksheet
+	</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+	<script src="script.js"></script>
+</head>
+<body data-ng-controller = "studentCtrl">
+	<div class="container-fluid">
+	<h1>Student Marksheet</h1>
+<div class="row">
+	<div class="col-12">	
+		<div class="form-group">
+		<input type="text" class="form-control" id="search" placeholder="Search Student" data-ng-model = "search">
+</div>
+		<table class="table table-striped table-hover">
+			<tbody>
+				
+			<tr>
+				<th>Name</th>
+				<th>Last Name</th>
+				<th>DMBS</th>
+				<th>DSA</th>
+				<th>OS</th>
+				<th>WT</th>
+				<th>CO</th>
+			</tr>
+			<tr data-ng-repeat = "item in data | filter:search">
+				<th>{{item.Name}}</th>
+				<th>{{item.lastName}}</th>
+				<th>{{item.DBMS}}</th>
+				<th>{{item.DSA}}</th>
+				<th>{{item.OS}}</th>
+				<th>{{item.WT}}</th>
+				<th>{{item.CO}}</th>
+			</tr>
+			</tbody>
+		</table>
+<br><br><br><br><br>
+<div class="form-group">
+	<button onclick="addStudent()" class="btn btn-primary">Add Student</button>
+</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12">
+</div>
+</div>
+</div>
+</body>
+</html>
