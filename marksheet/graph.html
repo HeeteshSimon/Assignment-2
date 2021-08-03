@@ -37,14 +37,14 @@
         dataTable.addColumn({type: 'number', 'id': 'amount'});
 
         // console.log(sessionStorage.getItem("Marks1"))
-        // console.log(sessionStorage.getItem("Marks2"))
+         console.log(sessionStorage.getItem("marks2"))
 
         dataTable.addRows([
-          [sessionStorage.getItem("Subject1"), parseInt(sessionStorage.getItem("Marks1"))],
-          [sessionStorage.getItem("Subject2"), parseInt(sessionStorage.getItem("Marks2"))],
-          [sessionStorage.getItem("Subject3"), parseInt(sessionStorage.getItem("Marks3"))],
-          [sessionStorage.getItem("Subject4"), parseInt(sessionStorage.getItem("Marks4"))],
-          [sessionStorage.getItem("Subject5"), parseInt(sessionStorage.getItem("Marks5"))]
+          [sessionStorage.getItem("subject1"), parseInt(sessionStorage.getItem("marks1"))],
+          [sessionStorage.getItem("subject2"), parseInt(sessionStorage.getItem("marks2"))],
+          [sessionStorage.getItem("subject3"), parseInt(sessionStorage.getItem("marks3"))],
+          [sessionStorage.getItem("subject4"), parseInt(sessionStorage.getItem("marks4"))],
+          [sessionStorage.getItem("subject5"), parseInt(sessionStorage.getItem("marks5"))]
         ]);
 
         const options = {
@@ -143,11 +143,11 @@
                 // Name of the recipient 
                 to_name: sessionStorage.getItem("Name"),
                 // Data to be sent to the recipient, the marks of the user 
-                subject1: `${sessionStorage.getItem("Subject1")} : ${sessionStorage.getItem("Marks1")}`,
-                subject2: `${sessionStorage.getItem("Subject2")} : ${sessionStorage.getItem("Marks2")}`,
-                subject3: `${sessionStorage.getItem("Subject3")} : ${sessionStorage.getItem("Marks3")}`,
-                subject4: `${sessionStorage.getItem("Subject4")} : ${sessionStorage.getItem("Marks4")}`,
-                subject5: `${sessionStorage.getItem("Subject5")} : ${sessionStorage.getItem("Marks5")}`,
+                subject1: `${sessionStorage.getItem("subject1")} : ${sessionStorage.getItem("marks1")}`,
+                subject2: `${sessionStorage.getItem("subject2")} : ${sessionStorage.getItem("marks2")}`,
+                subject3: `${sessionStorage.getItem("subject3")} : ${sessionStorage.getItem("marks3")}`,
+                subject4: `${sessionStorage.getItem("subject4")} : ${sessionStorage.getItem("marks4")}`,
+                subject5: `${sessionStorage.getItem("subject5")} : ${sessionStorage.getItem("marks5")}`,
                 // email to send to
                 to_email: sessionStorage.getItem("Email")
             })
@@ -164,7 +164,7 @@
 
       }
 
-      sendEmail ();
+      //sendEmail ();
 
         const chart = new google.visualization.VegaChart(document.getElementById('chart-div'));
         chart.draw(dataTable, options);
@@ -174,6 +174,7 @@
 
   <body>
     <div id="chart-div" style="width: 700px; height: 250px;"></div>
+    <script src="../Assets/js/values.js"></script>
   </body>
 
 </html>
