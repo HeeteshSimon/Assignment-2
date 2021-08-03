@@ -1,25 +1,4 @@
-//function formData(dataF) {
-
-  // importing user information
-
-  //import {data} from './storage.js';
-
-  let username = window.sessionStorage.getItem('nameId');
-  let streams = window.sessionStorage.getItem('streamId');
-
-  // window.sessionStorage.setItem('nameId', username);
-  // window.sessionStorage.setItem('streamId', streams);
-
-  // setting value for name and stream in datasheet page
-
-  document.getElementById('usernameId').value = window.sessionStorage.getItem('nameId');
-  document.getElementById('streamId').value = window.sessionStorage.getItem('streamId');
-
-  //console.log(document.getElementById('usernameId').value);
-
-  // we will store subjects locally here
-
-  let streamSubjects = {
+let streamSubjects = {
     Computer: ['Java', 'DSA', 'Python', 'COA', 'Database'],
     IT: ['OS', 'CN', 'SE', 'Web Design', 'Cloud'],
     Electronics: ['Antenna System Design', 'Wireless Networks', 'Signal Processing', 'Digital Communication Techniques', 'VLSI Signal Processing'],
@@ -27,15 +6,18 @@
     Mechanics: ['Statics and dynamics', 'Engineering Physics', 'Mechanics', 'Thermodynamics', 'Workshop'],
   };
 
+
+  let streams = window.sessionStorage.getItem('streamId');
+
   // let's place the selected streams subject inthe table
 
-  function streamSubjectsFunc(subject) {
-    document.getElementById('subject1').innerHTML = subject[0];
-    document.getElementById('subject2').innerHTML = subject[1];
-    document.getElementById('subject3').innerHTML = subject[2];
-    document.getElementById('subject4').innerHTML = subject[3];
-    document.getElementById('subject5').innerHTML = subject[4];
-  }
+//   function streamSubjectsFunc(subject) {
+//     document.getElementById('subject1').innerHTML = subject[0];
+//     document.getElementById('subject2').innerHTML = subject[1];
+//     document.getElementById('subject3').innerHTML = subject[2];
+//     document.getElementById('subject4').innerHTML = subject[3];
+//     document.getElementById('subject5').innerHTML = subject[4];
+//   }
 
   function streamSubjectsMarks(subject) {
     // storing subject names
@@ -44,8 +26,6 @@
     window.sessionStorage.setItem('subject3', subject[2]);
     window.sessionStorage.setItem('subject4', subject[3]);
     window.sessionStorage.setItem('subject5', subject[4]);
-
-    alert(document.getElementById('marks1').value);
 
     // storing subject marks
     window.sessionStorage.setItem('marks1', document.getElementById('marks1').value);
@@ -58,24 +38,22 @@
 
   switch (streams) {
     case 'Computer':
-      streamSubjectsFunc(streamSubjects.Computer);
+    //   streamSubjectsFunc(streamSubjects.Computer);
       streamSubjectsMarks(streamSubjects.Computer);
       break;
     case 'IT':
-      streamSubjectsFunc(streamSubjects.IT);
+    //   streamSubjectsFunc(streamSubjects.IT);
       streamSubjectsMarks(streamSubjects.IT);
       break;
     case 'Electronics':
-      streamSubjectsFunc(streamSubjects.Electronics);
+    //   streamSubjectsFunc(streamSubjects.Electronics);
       streamSubjectsMarks(streamSubjects.Electronics);
       break;
     case 'Electrical':
-      streamSubjectsFunc(streamSubjects.Electrical);
+    //   streamSubjectsFunc(streamSubjects.Electrical);
       streamSubjectsMarks(streamSubjects.Electrical);
       break;
     case 'Mechanics':
-      streamSubjectsFunc(streamSubjects.Mechanics);
+    //   streamSubjectsFunc(streamSubjects.Mechanics);
       streamSubjectsMarks(streamSubjects.Mechanics);
   };
-
-//}
