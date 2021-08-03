@@ -10,6 +10,28 @@
     (function() {
     emailjs.init("user_tPKhKUcRB6oV9LFr58dGH");
     })();
+
+    // sessionStorage.setItem("lastname", "Smith");
+
+    // User Credentials
+    sessionStorage.setItem("Email", "joshuaraymondfernandes@gmail.com");
+    sessionStorage.setItem("Name", "Joshua");
+ 
+
+    // Store
+    sessionStorage.setItem("Subject1", "Maths");
+    sessionStorage.setItem("Subject2", "Science");
+    sessionStorage.setItem("Subject3", "EVS");
+    sessionStorage.setItem("Subject4", "Physics");
+    sessionStorage.setItem("Subject5", "Chemistry");
+
+    sessionStorage.setItem("Marks1", 98);
+    sessionStorage.setItem("Marks2", 85);
+    sessionStorage.setItem("Marks3", 78);
+    sessionStorage.setItem("Marks4", 81);
+    sessionStorage.setItem("Marks5", 69);
+
+ 
 </script>
 
 <script type="text/javascript">
@@ -19,16 +41,31 @@
         
         console.log("Sending Mail")
 
+        let data = 
+`Marks Obtained :
+
+${sessionStorage.getItem("Subject1")} : ${sessionStorage.getItem("Marks1")}
+\n
+${sessionStorage.getItem("Subject2")} : ${sessionStorage.getItem("Marks2")}
+\n
+${sessionStorage.getItem("Subject3")} : ${sessionStorage.getItem("Marks3")}
+\n
+${sessionStorage.getItem("Subject4")} : ${sessionStorage.getItem("Marks4")}
+\n
+${sessionStorage.getItem("Subject5")} : ${sessionStorage.getItem("Marks5")}`
+
+        // let data = "Joshua" + "\\n" + "Fernandes"
+
         // Following are the secret keys for email dmonitor.info@gmail.com
         emailjs.send("service_fkc9g39","template_p6thiqk",{
             // Name who is sending mail
-            from_name: "TEST SENDER", 
+            from_name: "Aditya LTI", 
             // Name of the recipient 
-            to_name: "TEST RECIPENT ",
+            to_name: sessionStorage.getItem("Name"),
             // Data to be sent to the recipient, the marks of the user 
-            message: `TEST DATA`,
+            message: data,
             // email to send to
-            to_email: "joshuaraymondfernandes@gmail.com",
+            to_email: sessionStorage.getItem("Email"),
         })
 		.then(function (message) {
 			// Logs statements to see whether the code is running
