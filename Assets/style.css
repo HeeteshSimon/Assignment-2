@@ -1,0 +1,29 @@
+/*.nav-item{
+    text-align: right;
+    padding: 0 30px;
+    background: wheat;
+    justify-content: flex-end;
+}
+.navbar-collapse{
+    padding-right: 20px;
+    background: aliceblue;
+    justify-content: flex-end;
+}*/
+body{
+	background: #383a3d;
+	padding-top: 20px;	
+    
+}
+/* set form background colour*/
+form{
+	background: #fff;
+}
+/* set padding and size of th form */
+.form-container{
+    margin-top: 25px;
+	border-radius: 10px;
+	padding: 30px;
+}
+.form-group{
+    padding-bottom: 5px;
+}
