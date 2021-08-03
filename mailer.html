@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Send Mail</title>
+
+<!-- Required libraries for Emailjs -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+    emailjs.init("user_tPKhKUcRB6oV9LFr58dGH");
+    })();
+</script>
+
+<script type="text/javascript">
+
+    // Function to send Email
+	function sendEmail() {
+        
+        console.log("Sending Mail")
+
+        // Following are the secret keys for email dmonitor.info@gmail.com
+        emailjs.send("service_fkc9g39","template_p6thiqk",{
+            // Name who is sending mail
+            from_name: "TEST SENDER", 
+            // Name of the recipient 
+            to_name: "TEST RECIPENT ",
+            // Data to be sent to the recipient, the marks of the user 
+            message: `TEST DATA`,
+            // email to send to
+            to_email: "joshuaraymondfernandes@gmail.com",
+        })
+		.then(function (message) {
+			// Logs statements to see whether the code is running
+            if(message.status==200){
+                alert('Your mail has been send. Thank you for connecting.');
+            }
+            else{
+                console.error (message);
+                alert('There is error at sending message. ')
+            }
+		})
+
+	}
+</script>
+</head>
+
+<body>
+<form method="post">
+    <!-- Button that sends the email -->
+	<input type="button" value="Send Email"
+		onclick="sendEmail()" />
+</form>
+</body>
+
+</html>
