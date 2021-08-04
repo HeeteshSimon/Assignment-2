@@ -1,8 +1,8 @@
-/* .container{
+ .container{
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 90%;
-}*/
+}
 .table{
     width: 50%;
     display: block;
@@ -13,11 +13,18 @@ text-align: center;
     width: 40px;
 
   } */
-  .google-visualization-table-table tbody tr td:nth-child(1) {
+  /* .google-visualization-table-table tbody tr td:nth-child(1) {
     width: 40px;
   }
+
   .tableCell{
       width: 50px;
       text-align: center;
 
   }
+  .tableRow{
+      text-align: center;
+  } */
+  /* :root,*{
+    text-align: "center"
+  } */

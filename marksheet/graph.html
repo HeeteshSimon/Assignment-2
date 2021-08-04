@@ -177,6 +177,7 @@
       function drawTable() {
         var data = new google.visualization.DataTable();
         
+        
         data.addColumn('string', 'Subjects');
         data.addColumn('number', 'Marks');
         // 
@@ -190,15 +191,15 @@
 
         var table = new google.visualization.Table(document.getElementById('table_div'));
 
-        table.draw(data, {showRowNumber: false, width: '100%', height: '50%'});
+        table.draw(data, {allowHtml: true,showRowNumber: true, width: '100%', height: '50%'});
       }
       }
     </script>
-    <link rel="stylesheet" href="https://fluentdesignforweb.github.io/fluent.min.css"> 
+    <!-- <link rel="stylesheet" href="https://fluentdesignforweb.github.io/fluent.min.css">  -->
   </head>
 
   <body>
-    <div class="page_container">
+    <div class="container">
       <div class="text-center">
         <h2 style="text-align: center;">Student Marks</h2>
       </div>

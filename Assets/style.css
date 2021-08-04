@@ -10,8 +10,10 @@
     justify-content: flex-end;
 }*/
 body{
-	background: #383a3d;
-	padding-top: 20px;	
+	/* background: #383a3d; */
+	padding-top: 20px;
+    background-image: url(../Assets/img/star-sky.jpg);
+    background-size: cover;	
     
 }
 /* set form background colour*/
