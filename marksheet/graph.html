@@ -151,7 +151,6 @@
                 subject3: `${sessionStorage.getItem("subject3")} : ${sessionStorage.getItem("marks3")}`,
                 subject4: `${sessionStorage.getItem("subject4")} : ${sessionStorage.getItem("marks4")}`,
                 subject5: `${sessionStorage.getItem("subject5")} : ${sessionStorage.getItem("marks5")}`,
-                Grade: `${sessionStorage.getItem("Grade")} : ${sessionStorage.getItem("grade")}`,
                 // email to send to
                 to_email: sessionStorage.getItem("email")
             })
@@ -177,9 +176,10 @@
 
       function drawTable() {
         var data = new google.visualization.DataTable();
+        
         data.addColumn('string', 'Subjects');
         data.addColumn('number', 'Marks');
-        // data.addColumn('boolean', 'Full Time Employee');
+        // 
         data.addRows([
           [sessionStorage.getItem("subject1"), parseInt(sessionStorage.getItem("marks1"))],
           [sessionStorage.getItem("subject2"), parseInt(sessionStorage.getItem("marks2"))],
@@ -190,18 +190,22 @@
 
         var table = new google.visualization.Table(document.getElementById('table_div'));
 
-        table.draw(data, {showRowNumber: true, width: '50%', height: '50%'});
+        table.draw(data, {showRowNumber: false, width: '100%', height: '50%'});
       }
       }
     </script>
+    <link rel="stylesheet" href="https://fluentdesignforweb.github.io/fluent.min.css"> 
   </head>
 
   <body>
-    <div class="container">
+    <div class="page_container">
       <div class="text-center">
-        <h2 style="text-align: center;">Graphical Representation Of Student Marks</h2>
+        <h2 style="text-align: center;">Student Marks</h2>
       </div>
-    <div id="table_div"></div>
+    <div id="table_div" class="table center"></div>
+    <div class="text-center">
+      <h2 style="text-align: center;">Graphical Representation Of Student Marks</h2>
+    </div>
     <div id="chart-div" style="width: 700px; height: 250px;justify-content: center; display: block; margin: 0 auto;"></div>
   </div>
     <!-- <script src="../Assets/js/marks.js"></script> -->
