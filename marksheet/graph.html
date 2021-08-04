@@ -1,6 +1,7 @@
 <html>
   <head>
     <script src='https://www.gstatic.com/charts/loader.js'></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
     <script>
@@ -169,12 +170,33 @@
 
         const chart = new google.visualization.VegaChart(document.getElementById('chart-div'));
         chart.draw(dataTable, options);
+        google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Subjects');
+        data.addColumn('number', 'Marks');
+        // data.addColumn('boolean', 'Full Time Employee');
+        data.addRows([
+          [sessionStorage.getItem("subject1"), parseInt(sessionStorage.getItem("marks1"))],
+          [sessionStorage.getItem("subject2"), parseInt(sessionStorage.getItem("marks2"))],
+          [sessionStorage.getItem("subject3"), parseInt(sessionStorage.getItem("marks3"))],
+          [sessionStorage.getItem("subject4"), parseInt(sessionStorage.getItem("marks4"))],
+          [sessionStorage.getItem("subject5"), parseInt(sessionStorage.getItem("marks5"))]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '50%', height: '50%'});
+      }
       }
     </script>
   </head>
 
   <body>
-    <div id="chart-div" style="width: 700px; height: 250px;"></div>
+    <div id="chart-div" style="width: 700px; height: 250px;justify-content: center;"></div>
+    <div id="table_div"></div>
     <!-- <script src="../Assets/js/marks.js"></script> -->
     
   </body>
