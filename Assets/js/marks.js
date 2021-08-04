@@ -33,6 +33,7 @@ let streamSubjects = {
     window.sessionStorage.setItem('marks3', document.getElementById('marks3').value);
     window.sessionStorage.setItem('marks4', document.getElementById('marks4').value);
     window.sessionStorage.setItem('marks5', document.getElementById('marks5').value);
+    window.sessionStorage.setItem('totalM', document.getElementById('total').value);
   }
 
 
