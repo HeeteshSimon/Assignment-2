@@ -1,4 +1,16 @@
-
+function alphaOnly(e) {
+  var letters = /^[A-Za-z]+$/;
+      if(e.target.value.match(letters))
+      {
+     
+      
+      }
+      else
+      {
+      alert('Please input alphabet characters only for name');
+      return false;
+      }
+};
 //function for age
 function setAge(e) {
   var bday = new Date(Date.parse(e.target.value));
